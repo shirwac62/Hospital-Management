@@ -1,12 +1,27 @@
-    <div class="col-md-6 offset-md-3">
+{% extends "base.html" %}
+
+  {% block head %}
+         {% block styles %}
+          {{super()}}
+         <link rel="stylesheet" href="{{url_for('static', filename='css/bootstrap.min.css')}}">
+
+          <link rel="stylesheet" href="{{url_for('static', filename='css/sb-admin-2.css')}}">
+      {% endblock %}
+  {% endblock %}
+
+
+
+{% block content %}
+<br><br>
+<div class="col-md-6 offset-md-3">
         <div class="huge">Add Patient</div>
     </div>
-    <div class="col-md-6 offset-md-3 border pt-2">
+    <div class="col-md-6 offset-md-3 border pt-2" >
         <div class="row">
             <div class="col-md-12">
                 <form method="POST" action="">
                 {{ form.hidden_tag() }} <!--CSRF TOKEN -->
-                   <fieldset class="form-group">
+                   <fieldset class="form-group" >
                         <div class="form-group">
                             {{ form.pat_first_name.label(class="form-control-label") }}
                             {{ form.pat_first_name(class="form-control form-control-lg") }}
@@ -51,3 +66,6 @@
             </div>
         </div>
     </div>
+  {% endblock %}
+
+
