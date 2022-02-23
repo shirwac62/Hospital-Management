@@ -1,72 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
+{% extends "base.html" %}
 
-<head>
-   <meta charset="utf-8">
-   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-   <meta name="description" content="Bootstrap Admin App + jQuery">
-   <meta name="keywords" content="app, responsive, jquery, bootstrap, dashboard, admin">
-   <title>HMS</title>
-   <!-- =============== VENDOR STYLES ===============-->
-   <!-- FONT AWESOME-->
-   <link rel="stylesheet" href="static/vendor/fontawesome/css/font-awesome.min.css">
-   <!-- SIMPLE LINE ICONS-->
-   <link rel="stylesheet" href="static/vendor/simple-line-icons/css/simple-line-icons.css">
-   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-   <!-- ANIMATE.CSS-->
-   <link rel="stylesheet" href="static/vendor/animate.css/animate.min.css">
-   <!-- WHIRL (spinners)-->
-   <link rel="stylesheet" href="static/vendor/whirl/dist/whirl.css">
-   <!-- =============== PAGE VENDOR STYLES ===============-->
-   <!-- =============== BOOTSTRAP STYLES ===============-->
-   <link rel="stylesheet" href="static/app/css/bootstrap.css" id="bscss">
-   <!-- =============== APP STYLES ===============-->
-   <link rel="stylesheet" href="static/app/css/app.css" id="maincss">
-   <link rel="stylesheet" href="static/vendor/fontawesome/css/font-awesome.min.css">
-
-   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-   <script src='https://kit.fontawesome.com/a076d05399.js'></script>
-
-   <style>
-      a:hover {
-         text-decoration: none !important;
-      }
-
-      html {
-         position: relative;
-         /* Allows the footer to notice content height */
-         min-height: 100vh;
-         /* My page will always take the full screen */
-      }
-
-      footer {
-         position: absolute;
-         bottom: 0;
-         /* I want to be on the bottom... */
-         left: 0;
-         /* ...and to the left */
-      }
-
-      body {
-         background-image: url("/images/hospital.png");
-         background-repeat: no-repeat;
-         background-size: cover;
-
-      }
-
-      h1 {
-         color: navy;
-      }
-
-      .content-heading,
-      section {
-         background-image: url("/images/dark.png");
-      }
-   </style>
-</head>
+{% block content %}
 
 <body class="layout-h">
+{{supper}}
    <div class="wrapper">
       <!-- top navbar-->
       <header class="topnavbar-wrapper">
@@ -166,7 +103,7 @@
                      </a>
                   </div>
                   <div class="col-lg-4 col-md-6">
-                     <a href="nurse.html">
+                     <a href="nurse">
                         <!-- START widget-->
                         <div class="panel widget bg-gray-light">
                            <div class="row row-table">
@@ -292,5 +229,4 @@
    <script src="app/js/app.js"></script>
    <script src="js/home.js"></script>
 </body>
-
-</html>
+  {% endblock %}
