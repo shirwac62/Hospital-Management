@@ -1,0 +1,206 @@
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+     <meta charset="UTF-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Doctor page</title>
+
+         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+
+   <link rel="stylesheet" href="static/vendor/fontawesome/css/font-awesome.min.css">
+   <!-- SIMPLE LINE ICONS-->
+   <link rel="stylesheet" href="static/vendor/simple-line-icons/css/simple-line-icons.css">
+   <!-- ANIMATE.CSS-->
+   <link rel="stylesheet" href="static/vendor/animate.css/animate.min.css">
+   <!-- WHIRL (spinners)-->
+   <link rel="stylesheet" href="static/vendor/whirl/dist/whirl.css">
+   <link rel="stylesheet" href="static/vendor/sweetalert/dist/sweetalert.css">
+   <!-- DATATABLES-->
+   <link rel="stylesheet" href="static/vendor/datatables-colvis/css/dataTables.colVis.css">
+   <link rel="stylesheet" href="static/vendor/datatables/media/css/dataTables.bootstrap.css">
+   <link rel="stylesheet" href="static/vendor/dataTables.fontAwesome/index.css">
+   <!-- =============== PAGE VENDOR STYLES ===============-->
+   <!-- =============== BOOTSTRAP STYLES ===============-->
+   <link rel="stylesheet" href="static/app/css/bootstrap.css" id="bscss">
+   <!-- =============== APP STYLES ===============-->
+   <link rel="stylesheet" href="static/app/css/app.css" id="maincss">
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+      <style>
+      a:hover {
+         text-decoration: none !important;
+      }
+
+      html {
+         position: relative;
+         /* Allows the footer to notice content height */
+         min-height: 100vh;
+         /* My page will always take the full screen */
+      }
+
+      footer {
+         position: absolute;
+         bottom: 0;
+         /* I want to be on the bottom... */
+         left: 0;
+         /* ...and to the left */
+      }
+
+      body {
+         background-image: url("/images/hospital.png");
+         background-repeat: no-repeat;
+         background-size: cover;
+
+      }
+
+      h1 {
+         color: navy;
+      }
+
+      .content-heading,
+      section {
+         background-image: url("/images/dark.png");
+      }
+   </style>
+ </head>
+ <body>
+
+ </body>
+ </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+   <meta name="description" content="Bootstrap Admin App + jQuery">
+   <meta name="keywords" content="app, responsive, jquery, bootstrap, dashboard, admin">
+   <title>Patient</title>
+   <!-- =============== VENDOR STYLES ===============-->
+   <!-- FONT AWESOME-->
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+
+   <link rel="stylesheet" href="static/vendor/fontawesome/css/font-awesome.min.css">
+   <!-- SIMPLE LINE ICONS-->
+   <link rel="stylesheet" href="static/vendor/simple-line-icons/css/simple-line-icons.css">
+   <!-- ANIMATE.CSS-->
+   <link rel="stylesheet" href="static/vendor/animate.css/animate.min.css">
+   <!-- WHIRL (spinners)-->
+   <link rel="stylesheet" href="static/vendor/whirl/dist/whirl.css">
+   <link rel="stylesheet" href="static/vendor/sweetalert/dist/sweetalert.css">
+   <!-- DATATABLES-->
+   <link rel="stylesheet" href="static/vendor/datatables-colvis/css/dataTables.colVis.css">
+   <link rel="stylesheet" href="static/vendor/datatables/media/css/dataTables.bootstrap.css">
+   <link rel="stylesheet" href="static/vendor/dataTables.fontAwesome/index.css">
+   <!-- =============== PAGE VENDOR STYLES ===============-->
+   <!-- =============== BOOTSTRAP STYLES ===============-->
+   <link rel="stylesheet" href="static/app/css/bootstrap.css" id="bscss">
+   <!-- =============== APP STYLES ===============-->
+   <link rel="stylesheet" href="static/app/css/app.css" id="maincss">
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+   <style>
+      a:hover {
+         text-decoration: none !important;
+      }
+
+      html {
+         position: relative;
+         /* Allows the footer to notice content height */
+         min-height: 100vh;
+         /* My page will always take the full screen */
+      }
+
+      footer {
+         position: absolute;
+         bottom: 0;
+         /* I want to be on the bottom... */
+         left: 0;
+         /* ...and to the left */
+      }
+
+      body {
+         background-image: url("/images/hospital.png");
+         background-repeat: no-repeat;
+         background-size: cover;
+
+      }
+
+      h1 {
+         color: navy;
+      }
+
+      .content-heading,
+      section {
+         background-image: url("/images/dark.png");
+      }
+   </style>
+</head>
+
+<body class="layout-h">
+   <div class="wrapper">
+      <!-- top navbar-->
+      <!-- sidebar-->
+
+      <!-- offsidebar-->
+
+      <!-- Main section-->
+      <section>
+         <!-- Page content-->
+         <div class="content-wrapper">
+            <div class="content-heading">
+               <!-- START Language list-->
+
+               <!-- END Language list    -->
+               <h1>doctor</h1>
+               <small data-localize="dashboard.WELCOME"></small>
+               <div class="pull-right">
+                  <div class="btn-group">
+<!--                        <button style="bottom: 27px;" class="btn btn-primary" href="{{ url_for('patient.add_patient') }}"></button>-->
+                        <a style="bottom: 27px;"  class="btn btn-primary" href="{{ url_for('doctor.doctor') }}">Add doctor</a>
+
+                  </div>
+               </div>
+            </div>
+
+<br><br><br>
+
+
+
+
+
+
+</body>
+
+</html>

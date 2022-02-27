@@ -3,7 +3,7 @@
 {% block content %}
 
 <body class="layout-h">
-{{supper}}
+<!--{{supper}}-->
    <div class="wrapper">
       <!-- top navbar-->
       <header class="topnavbar-wrapper">
@@ -48,15 +48,15 @@
                               </div>
                               <div class="col-xs-8 pv-lg">
                                  <div class="h1 m0 text-bold" id="patientcount"></div>
-                                 <div class="text-uppercase"><b>Patient</b></div>
+                                 <div class="text-uppercase"><b>patient</b></div>
                               </div>
                            </div>
                         </div>
                      </a>
                   </div>
                   <div class="col-lg-4 col-md-6">
-                     <a href="doctor.html">
-                        <!-- START widget-->
+                      <!-- START widget-->
+                     <a href="doctor">
                         <div class="panel widget bg-danger">
                            <div class="row row-table">
                               <div class="col-xs-4 text-center bg-gray-dark pv-lg">
@@ -64,7 +64,7 @@
                               </div>
                               <div class="col-xs-8 pv-lg">
                                  <div class="h1 m0 text-bold" id="doctorcount"></div>
-                                 <div class="text-uppercase"><b>Doctor</b></div>
+                                 <div class="text-uppercase"><b>doctor</b></div>
                               </div>
                            </div>
                         </div>
@@ -209,7 +209,11 @@
        
 
    </div>
-   <!-- =============== VENDOR SCRIPTS ===============-->
+
+</body>
+{% block scripts %}
+{{super()}}
+  <!-- =============== VENDOR SCRIPTS ===============-->
    <!-- MODERNIZR-->
    <script src="vendor/modernizr/modernizr.custom.js"></script>
    <!-- JQUERY-->
@@ -228,5 +232,6 @@
    <!-- =============== APP SCRIPTS ===============-->
    <script src="app/js/app.js"></script>
    <script src="js/home.js"></script>
-</body>
-  {% endblock %}
+
+{% endblock %}
+{% endblock %}
