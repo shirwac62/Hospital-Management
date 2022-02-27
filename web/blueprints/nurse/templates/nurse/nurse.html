@@ -6,11 +6,10 @@
    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
    <meta name="description" content="Bootstrap Admin App + jQuery">
    <meta name="keywords" content="app, responsive, jquery, bootstrap, dashboard, admin">
-   <title>Patient</title>
+   <title>Nurse</title>
    <!-- =============== VENDOR STYLES ===============-->
    <!-- FONT AWESOME-->
-
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
 
    <link rel="stylesheet" href="static/vendor/fontawesome/css/font-awesome.min.css">
@@ -33,7 +32,7 @@
    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
    <style>
-      a:hover {
+ a:hover {
          text-decoration: none !important;
       }
 
@@ -67,7 +66,7 @@
       section {
          background-image: url("/images/dark.png");
       }
-   </style>
+    </style>
 </head>
 
 <body class="layout-h">
@@ -88,7 +87,6 @@
                </ul>
             </div>
          </nav>
-
          <!-- END Top Navbar-->
       </header>
       <!-- sidebar-->
@@ -103,27 +101,26 @@
                <!-- START Language list-->
 
                <!-- END Language list    -->
-               <h1>Patient</h1>
+               <h1>Nurse</h1>
                <small data-localize="dashboard.WELCOME"></small>
                <div class="pull-right">
                   <div class="btn-group">
-<!--                        <button style="bottom: 27px;" class="btn btn-primary" href="{{ url_for('patient.add_patient') }}"></button>-->
-                        <a style="bottom: 27px;"  class="btn btn-primary" href="{{ url_for('patient.add_patient') }}">Add Patient</a>
+                     <a style="bottom: 27px;"  class="btn btn-primary" href="{{ url_for('nurse.add_nurse') }}">Add Nurse</a>
 
                   </div>
                </div>
             </div>
 
+
 <br><br><br>
 
-<table id="example" class="table table-striped" style="width:100%">
+<table id="nurse" class="table table-striped" style="width:100%">
         <thead>
             <tr>
-                <th>Patient ID</th>
+                <th>ID</th>
                 <th>First Name</th>
                 <th>Last Name</th>
                 <th>Address</th>
-                <th>Insurance No</th>
                 <th>Phone No</th>
                 <th>Action</th>
         <thead>
@@ -134,10 +131,10 @@
 
  <script>
              $(document).ready( function () {
-                 if ($('#example').length > 0){
-                     $('#example').DataTable({
+                 if ($('#nurse').length > 0){
+                     $('#nurse').DataTable({
                         "serverSide": true,
-                        "ajax": {  url: "patient/api",
+                        "ajax": {  url: "nurse/api",
                         "data": function (d) {   delete d.columns; },
                                 },
                      });
