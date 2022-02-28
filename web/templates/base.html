@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+{% block head %}
 <head>
    <meta charset="utf-8">
    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -68,18 +69,15 @@
       }
    </style>
 </head>
+{% endblock %}
+
 
 <body class="layout-h">
+{% block content %}
+
 <div class="wrapper">
-<!--  {% block head %}-->
-
-
-
-<!--  {% endblock %}-->
-
-  {% block content %}
-        <header class="topnavbar-wrapper">
-         <!-- START Top Navbar-->
+    <header class="topnavbar-wrapper">
+<!--          START Top Navbar-->
          <nav class="navbar navbar-inverse">
             <div class="container-fluid">
                <div class="navbar-header">
@@ -95,15 +93,11 @@
          </nav>
          <!-- END Top Navbar-->
       </header>
+
+{% endblock %}
+   {% block scripts %}
+            <script type="text/javascript" src="{{url_for('static', filename='DataTables/datatables.min.js')}}"></script>
+{% endblock %}
 </div>
-
-
-{% endblock %}
-
-
-{% block scripts %}
-<script type="text/javascript" src="{{url_for('static', filename='DataTables/datatables.min.js')}}"></script>
-<!--{{super()}}-->
-{% endblock %}
 </body>
 </html>

@@ -1,24 +1,53 @@
 {% extends "base.html" %}
-
+{% block head %}
+{{super()}}
+<head>
+    <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+   <meta name="description" content="Bootstrap Admin App + jQuery">
+   <meta name="keywords" content="app, responsive, jquery, bootstrap, dashboard, admin">
+   <title>Nurse</title>
+   <!-- =============== VENDOR STYLES ===============-->
+   <!-- FONT AWESOME-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+   <link rel="stylesheet" href="static/vendor/fontawesome/css/font-awesome.min.css">
+   <!-- SIMPLE LINE ICONS-->
+   <link rel="stylesheet" href="static/vendor/simple-line-icons/css/simple-line-icons.css">
+   <!-- ANIMATE.CSS-->
+   <link rel="stylesheet" href="static/vendor/animate.css/animate.min.css">
+   <!-- WHIRL (spinners)-->
+   <link rel="stylesheet" href="static/vendor/whirl/dist/whirl.css">
+   <link rel="stylesheet" href="static/vendor/sweetalert/dist/sweetalert.css">
+   <!-- DATATABLES-->
+   <link rel="stylesheet" href="static/vendor/datatables-colvis/css/dataTables.colVis.css">
+   <link rel="stylesheet" href="static/vendor/datatables/media/css/dataTables.bootstrap.css">
+   <link rel="stylesheet" href="static/vendor/dataTables.fontAwesome/index.css">
+   <!-- =============== PAGE VENDOR STYLES ===============-->
+   <!-- =============== BOOTSTRAP STYLES ===============-->
+<!--   <link rel="stylesheet" href="static/app/css/bootstrap.css" id="bscss">-->
+   <!-- =============== APP STYLES ===============-->
+<!--   <link rel="stylesheet" href="static/app/css/app.css" id="maincss">-->
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+{% endblock %}
 {% block content %}
-        <div class="content-wrapper">
+{{super()}}
+<div class="content-wrapper">
             <div class="content-heading">
-               <!-- START Language list-->
-
-               <!-- END Language list    -->
-               <h1>Patient</h1>
+                <h1>Patient</h1>
                <small data-localize="dashboard.WELCOME"></small>
                <div class="pull-right">
                   <div class="btn-group">
-<!--                        <button style="bottom: 27px;" class="btn btn-primary" href="{{ url_for('patient.add_patient') }}"></button>-->
-                        <a style="bottom: 27px;"  class="btn btn-primary" href="{{ url_for('patient.add_patient') }}">Add Patient</a>
+                         <a style="bottom: 27px;"  class="btn btn-primary" href="{{ url_for('patient.add_patient') }}">Add Patient</a>
 
                   </div>
                </div>
             </div>
-       <table id="example" class="table table-striped" style="width:100%">
-              <thead>
-                <tr>
+
+<table id="example" class="table table-striped" style="width:100%">
+        <thead>
+            <tr>
                 <th>Patient ID</th>
                 <th>First Name</th>
                 <th>Last Name</th>
@@ -26,21 +55,11 @@
                 <th>Insurance No</th>
                 <th>Phone No</th>
                 <th>Action</th>
-                </tr>
-              <thead>
-             <tbody>
-                 <tr>
+            </tr>
+        <thead>
+</table>
 
-                 </tr>
-           </tbody>
-           <tfoot>
-
-           </tfoot>
-      </table>
-
-{% block scripts %}
-<!--<script type="text/javascript" src="{{url_for('static', filename='DataTables/datatables.min.js')}}"></script>-->
- <script>
+<script>
              $(document).ready( function () {
                  if ($('#example').length > 0){
                      $('#example').DataTable({
@@ -52,180 +71,12 @@
                  }
              } );
  </script>
-<!--{{super()}}-->
-{% endblock %}
-        </div>
-{% endblock %}
+
+</div>
+ {% endblock %}
 
 
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<!--<!DOCTYPE html>-->
-<!--<html lang="en">-->
-
-<!--<head>-->
-<!--   <meta charset="utf-8">-->
-<!--   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">-->
-<!--   <meta name="description" content="Bootstrap Admin App + jQuery">-->
-<!--   <meta name="keywords" content="app, responsive, jquery, bootstrap, dashboard, admin">-->
-<!--   <title>Patient</title>-->
-<!--   &lt;!&ndash; =============== VENDOR STYLES ===============&ndash;&gt;-->
-<!--   &lt;!&ndash; FONT AWESOME&ndash;&gt;-->
-
-<!--    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">-->
-
-
-<!--   <link rel="stylesheet" href="static/vendor/fontawesome/css/font-awesome.min.css">-->
-<!--   &lt;!&ndash; SIMPLE LINE ICONS&ndash;&gt;-->
-<!--   <link rel="stylesheet" href="static/vendor/simple-line-icons/css/simple-line-icons.css">-->
-<!--   &lt;!&ndash; ANIMATE.CSS&ndash;&gt;-->
-<!--   <link rel="stylesheet" href="static/vendor/animate.css/animate.min.css">-->
-<!--   &lt;!&ndash; WHIRL (spinners)&ndash;&gt;-->
-<!--   <link rel="stylesheet" href="static/vendor/whirl/dist/whirl.css">-->
-<!--   <link rel="stylesheet" href="static/vendor/sweetalert/dist/sweetalert.css">-->
-<!--   &lt;!&ndash; DATATABLES&ndash;&gt;-->
-<!--   <link rel="stylesheet" href="static/vendor/datatables-colvis/css/dataTables.colVis.css">-->
-<!--   <link rel="stylesheet" href="static/vendor/datatables/media/css/dataTables.bootstrap.css">-->
-<!--   <link rel="stylesheet" href="static/vendor/dataTables.fontAwesome/index.css">-->
-<!--   &lt;!&ndash; =============== PAGE VENDOR STYLES ===============&ndash;&gt;-->
-<!--   &lt;!&ndash; =============== BOOTSTRAP STYLES ===============&ndash;&gt;-->
-<!--   <link rel="stylesheet" href="static/app/css/bootstrap.css" id="bscss">-->
-<!--   &lt;!&ndash; =============== APP STYLES ===============&ndash;&gt;-->
-<!--   <link rel="stylesheet" href="static/app/css/app.css" id="maincss">-->
-<!--   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>-->
-<!--   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>-->
-<!--   <style>-->
-<!--      a:hover {-->
-<!--         text-decoration: none !important;-->
-<!--      }-->
-
-<!--      html {-->
-<!--         position: relative;-->
-<!--         /* Allows the footer to notice content height */-->
-<!--         min-height: 100vh;-->
-<!--         /* My page will always take the full screen */-->
-<!--      }-->
-
-<!--      footer {-->
-<!--         position: absolute;-->
-<!--         bottom: 0;-->
-<!--         /* I want to be on the bottom... */-->
-<!--         left: 0;-->
-<!--         /* ...and to the left */-->
-<!--      }-->
-
-<!--      body {-->
-<!--         background-image: url("/images/hospital.png");-->
-<!--         background-repeat: no-repeat;-->
-<!--         background-size: cover;-->
-
-<!--      }-->
-
-<!--      h1 {-->
-<!--         color: navy;-->
-<!--      }-->
-
-<!--      .content-heading,-->
-<!--      section {-->
-<!--         background-image: url("/images/dark.png");-->
-<!--      }-->
-<!--   </style>-->
-<!--</head>-->
-
-<!--<body class="layout-h">-->
-<!--   <div class="wrapper">-->
-<!--      &lt;!&ndash; top navbar&ndash;&gt;-->
-<!--      <header class="topnavbar-wrapper">-->
-<!--         &lt;!&ndash; START Top Navbar&ndash;&gt;-->
-<!--         <nav class="navbar navbar-inverse">-->
-<!--            <div class="container-fluid">-->
-<!--               <div class="navbar-header">-->
-<!--                  <a class="navbar-brand" href="/"><b>Hospital Management System</b></a>-->
-<!--               </div>-->
-<!--               <ul class="nav navbar-nav">-->
-<!--                  <li class="active"><a href="/"><b>Home</b></a></li>-->
-<!--               </ul>-->
-<!--               <ul class="nav navbar-nav navbar-right">-->
-<!--                  <li class="active"><a href="about_us.html"><b>Creators</b></a></li>-->
-<!--               </ul>-->
-<!--            </div>-->
-<!--         </nav>-->
-
-<!--         &lt;!&ndash; END Top Navbar&ndash;&gt;-->
-<!--      </header>-->
-<!--      &lt;!&ndash; sidebar&ndash;&gt;-->
-
-<!--      &lt;!&ndash; offsidebar&ndash;&gt;-->
-
-<!--      &lt;!&ndash; Main section&ndash;&gt;-->
-<!--      <section>-->
-<!--         &lt;!&ndash; Page content&ndash;&gt;-->
-<!--         <div class="content-wrapper">-->
-<!--            <div class="content-heading">-->
-<!--               &lt;!&ndash; START Language list&ndash;&gt;-->
-
-<!--               &lt;!&ndash; END Language list    &ndash;&gt;-->
-<!--               <h1>Patient</h1>-->
-<!--               <small data-localize="dashboard.WELCOME"></small>-->
-<!--               <div class="pull-right">-->
-<!--                  <div class="btn-group">-->
-<!--&lt;!&ndash;                        <button style="bottom: 27px;" class="btn btn-primary" href="{{ url_for('patient.add_patient') }}"></button>&ndash;&gt;-->
-<!--                        <a style="bottom: 27px;"  class="btn btn-primary" href="{{ url_for('patient.add_patient') }}">Add Patient</a>-->
-
-<!--                  </div>-->
-<!--               </div>-->
-<!--            </div>-->
-
-<!--<br><br><br>-->
-
-<!--<table id="example" class="table table-striped" style="width:100%">-->
-<!--        <thead>-->
-<!--            <tr>-->
-<!--                <th>Patient ID</th>-->
-<!--                <th>First Name</th>-->
-<!--                <th>Last Name</th>-->
-<!--                <th>Address</th>-->
-<!--                <th>Insurance No</th>-->
-<!--                <th>Phone No</th>-->
-<!--                <th>Action</th>-->
-<!--        <thead>-->
-<!--    </table>-->
-
-<!-- <script>-->
-<!--             $(document).ready( function () {-->
-<!--                 if ($('#example').length > 0){-->
-<!--                     $('#example').DataTable({-->
-<!--                        "serverSide": true,-->
-<!--                        "ajax": {  url: "patient/api",-->
-<!--                        "data": function (d) {   delete d.columns; },-->
-<!--                                },-->
-<!--                     });-->
-<!--                 }-->
-<!--             } );-->
-<!-- </script>-->
-
-
-<!--</body>-->
-
-<!--</html>-->

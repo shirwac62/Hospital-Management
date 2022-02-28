@@ -1,6 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
 
+{% extends "base.html" %}
+{% block head %}
+{{super()}}
 <head>
    <meta charset="utf-8">
    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -31,88 +32,22 @@
    <link rel="stylesheet" href="static/app/css/app.css" id="maincss">
    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-   <style>
- a:hover {
-         text-decoration: none !important;
-      }
-
-      html {
-         position: relative;
-         /* Allows the footer to notice content height */
-         min-height: 100vh;
-         /* My page will always take the full screen */
-      }
-
-      footer {
-         position: absolute;
-         bottom: 0;
-         /* I want to be on the bottom... */
-         left: 0;
-         /* ...and to the left */
-      }
-
-      body {
-         background-image: url("/images/hospital.png");
-         background-repeat: no-repeat;
-         background-size: cover;
-
-      }
-
-      h1 {
-         color: navy;
-      }
-
-      .content-heading,
-      section {
-         background-image: url("/images/dark.png");
-      }
-    </style>
 </head>
-
-<body class="layout-h">
-   <div class="wrapper">
-      <!-- top navbar-->
-      <header class="topnavbar-wrapper">
-         <!-- START Top Navbar-->
-         <nav class="navbar navbar-inverse">
-            <div class="container-fluid">
-               <div class="navbar-header">
-                  <a class="navbar-brand" href="/"><b>Hospital Management System</b></a>
-               </div>
-               <ul class="nav navbar-nav">
-                  <li class="active"><a href="/"><b>Home</b></a></li>
-               </ul>
-               <ul class="nav navbar-nav navbar-right">
-                  <li class="active"><a href="about_us.html"><b>Creators</b></a></li>
-               </ul>
-            </div>
-         </nav>
-         <!-- END Top Navbar-->
-      </header>
-      <!-- sidebar-->
-
-      <!-- offsidebar-->
-
-      <!-- Main section-->
-      <section>
-         <!-- Page content-->
-         <div class="content-wrapper">
+{% endblock %}
+{% block content %}
+{{super()}}
+<div class="content-wrapper">
             <div class="content-heading">
-               <!-- START Language list-->
-
-               <!-- END Language list    -->
-               <h1>Nurse</h1>
+                <h1>Nurse</h1>
                <small data-localize="dashboard.WELCOME"></small>
                <div class="pull-right">
                   <div class="btn-group">
                      <a style="bottom: 27px;"  class="btn btn-primary" href="{{ url_for('nurse.add_nurse') }}">Add Nurse</a>
 
+
                   </div>
                </div>
             </div>
-
-
-<br><br><br>
 
 <table id="nurse" class="table table-striped" style="width:100%">
         <thead>
@@ -123,13 +58,11 @@
                 <th>Address</th>
                 <th>Phone No</th>
                 <th>Action</th>
+            </tr>
         <thead>
-    </table>
+</table>
 
-
-            <script type="text/javascript" src="{{url_for('static', filename='DataTables/datatables.min.js')}}"></script>
-
- <script>
+<script>
              $(document).ready( function () {
                  if ($('#nurse').length > 0){
                      $('#nurse').DataTable({
@@ -140,9 +73,7 @@
                      });
                  }
              } );
-        </script>
+ </script>
 
-
-</body>
-
-</html>
+</div>
+{% endblock %}
