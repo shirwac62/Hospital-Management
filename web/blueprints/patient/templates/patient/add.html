@@ -1,0 +1,60 @@
+{% extends "base.html" %}
+
+{% block content %}
+<br><br>
+<div class="col-md-6 offset-md-3">
+        <div class="huge">Add Patient</div>
+    </div>
+    <div class="col-md-6 offset-md-3 border pt-2" >
+        <div class="row">
+            <div class="col-md-12">
+                <form method="POST" action="">
+                {{ form.hidden_tag() }} <!--CSRF TOKEN -->
+                   <fieldset class="form-group" >
+                        <div class="form-group">
+                            {{ form.pat_first_name.label(class="form-control-label") }}
+                            {{ form.pat_first_name(class="form-control form-control-lg") }}
+                        </div>
+                    </fieldset>
+                    <fieldset class="form-group">
+                        <div class="form-group">
+                            {{ form.pat_last_name.label(class="form-control-label") }}
+                            {{ form.pat_last_name(class="form-control form-control-lg") }}
+                        </div>
+                    </fieldset>
+                    <fieldset class="form-group">
+                        <div class="form-group">
+                            {{ form.pat_address.label(class="form-control-label") }}
+                            {{ form.pat_address(class="form-control form-control-lg") }}
+                        </div>
+                    </fieldset>
+                    <fieldset class="form-group">
+                        <div class="form-group">
+                            {{ form.pat_insurance_no.label(class="form-control-label") }}
+                            {{ form.pat_insurance_no(class="form-control form-control-lg") }}
+                        </div>
+                    </fieldset>
+                    <fieldset class="form-group">
+                        <div class="form-group">
+                            {{ form.pat_ph_no.label(class="form-control-label") }}
+                            {{ form.pat_ph_no(class="form-control form-control-lg") }}
+                        </div>
+                    </fieldset>
+            </div>
+        </div>
+
+          <br>
+        <div class="row">
+            <div class="col-md-12">
+                    <fieldset>
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-primary">Add patient</button>
+                        </div>
+                    </fieldset>
+                </form>
+            </div>
+        </div>
+    </div>
+  {% endblock %}
+
+

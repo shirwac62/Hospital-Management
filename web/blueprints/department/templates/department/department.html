@@ -1,18 +1,15 @@
-
 {% extends "base.html" %}
 {% block head %}
 {{super()}}
 <head>
-   <meta charset="utf-8">
+    <meta charset="utf-8">
    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
    <meta name="description" content="Bootstrap Admin App + jQuery">
    <meta name="keywords" content="app, responsive, jquery, bootstrap, dashboard, admin">
-   <title>Nurse</title>
+   <title>Department</title>
    <!-- =============== VENDOR STYLES ===============-->
    <!-- FONT AWESOME-->
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
    <link rel="stylesheet" href="static/vendor/fontawesome/css/font-awesome.min.css">
    <!-- SIMPLE LINE ICONS-->
    <link rel="stylesheet" href="static/vendor/simple-line-icons/css/simple-line-icons.css">
@@ -27,9 +24,9 @@
    <link rel="stylesheet" href="static/vendor/dataTables.fontAwesome/index.css">
    <!-- =============== PAGE VENDOR STYLES ===============-->
    <!-- =============== BOOTSTRAP STYLES ===============-->
-   <link rel="stylesheet" href="static/app/css/bootstrap.css" id="bscss">
+<!--   <link rel="stylesheet" href="static/app/css/bootstrap.css" id="bscss">-->
    <!-- =============== APP STYLES ===============-->
-   <link rel="stylesheet" href="static/app/css/app.css" id="maincss">
+<!--   <link rel="stylesheet" href="static/app/css/app.css" id="maincss">-->
    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </head>
@@ -38,22 +35,24 @@
 {{super()}}
 <div class="content-wrapper">
             <div class="content-heading">
-                <h1>Nurse</h1>
+                <h1>department</h1>
                <small data-localize="dashboard.WELCOME"></small>
                <div class="pull-right">
                   <div class="btn-group">
-                     <a style="bottom: 27px;"  class="btn btn-primary" href="{{ url_for('nurse.add_nurse') }}">Add Nurse</a>
+                         <a style="bottom: 27px;"  class="btn btn-primary" href="{{ url_for('department.add_department') }}">Add department</a>
+
                   </div>
                </div>
             </div>
-<table id="nurse" class="table table-striped" style="width:100%">
+
+<table id="department" class="table table-striped" style="width:100%">
         <thead>
             <tr>
-                <th>ID</th>
+                <th>Department ID</th>
+                <th>Department Name</th>
+                <th>Head ID</th>
                 <th>First Name</th>
                 <th>Last Name</th>
-                <th>Address</th>
-                <th>Phone No</th>
                 <th>Action</th>
             </tr>
         <thead>
@@ -61,10 +60,10 @@
 
 <script>
              $(document).ready( function () {
-                 if ($('#nurse').length > 0){
-                     $('#nurse').DataTable({
+                 if ($('#department').length > 0){
+                     $('#department').DataTable({
                         "serverSide": true,
-                        "ajax": {  url: "nurse/api",
+                        "ajax": {  url: "department/api",
                         "data": function (d) {   delete d.columns; },
                                 },
                      });
@@ -73,4 +72,10 @@
  </script>
 
 </div>
-{% endblock %}
+ {% endblock %}
+
+
+
+
+
+

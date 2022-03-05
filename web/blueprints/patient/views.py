@@ -18,7 +18,7 @@ def add_patient():
         save_to_db(data)
         flash('Your Patient has been created', 'success')
         return redirect(url_for('patient.patient'))
-    return render_template('add.html', title='patient', form=form)
+    return render_template('patient/add.html', title='patient', form=form)
 
 
 @blueprint.route(blueprint.url + "/edit/<patient_id>", methods=['GET', 'POST'])
@@ -34,7 +34,7 @@ def edit_patient(patient_id):
         save_to_db(data)
         flash('Your Patient has been Updated', 'success')
         return redirect(url_for('patient.patient'))
-    return render_template('edit.html', title='edit_patient', form=form, patient=Patient)
+    return render_template('patient/edit.html', title='edit_patient', form=form, patient=Patient)
 
 
 @blueprint.route(blueprint.url + "/delete/<patient_id>", methods=['GET', 'POST'])
@@ -45,7 +45,7 @@ def delete_patient(patient_id):
         delete(data)
         flash('Your Patient has been Deleted', 'success')
         return redirect(url_for('patient.patient'))
-    return render_template('delete.html', title="delete_patient", form=form, patient=Patient, data=data)
+    return render_template('patient/delete.html', title="delete_patient", form=form, patient=Patient, data=data)
 
 
 @blueprint.route(blueprint.url + '/api')
@@ -62,8 +62,10 @@ def pub_index():
     data = []
     for b in data_list.items:
         row = [b.patient_id, b.pat_first_name, b.pat_last_name, b.pat_address, b.pat_insurance_no, b.pat_ph_no,
-               '<a href="{0}"><i class="fa-solid fa-pen-to-square"></i></a>'.format(url_for('patient.edit_patient', patient_id=b.patient_id))+ " " +\
-               '<a href="{0}"><i class="fa-solid fa-trash"></i></a>'.format( url_for('patient.delete_patient', patient_id=b.patient_id))]
+               '<a href="{0}"><i class="fa-solid fa-pen-to-square"></i></a>'.format(
+                   url_for('patient.edit_patient', patient_id=b.patient_id)) + " " + \
+               '<a href="{0}"><i class="fa-solid fa-trash"></i></a>'.format(
+                   url_for('patient.delete_patient', patient_id=b.patient_id))]
 
         data += [row]
     print("data_list.total: ", data_list.total)
@@ -74,4 +76,4 @@ def pub_index():
 @blueprint.route(blueprint.url, methods=['GET'])
 def patient():
     Patients = Patient.query.all()
-    return render_template('patient.html', title='patient', Patients=Patients)
+    return render_template('patient/patient.html', title='patient', Patients=Patients)

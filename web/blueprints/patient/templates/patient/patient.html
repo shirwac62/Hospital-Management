@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+{% block head %}
+{{super()}}
+
+{% endblock %}
+{% block content %}
+{{super()}}
+<div class="content-wrapper">
+            <div class="content-heading">
+                <h1>patient</h1>
+               <small data-localize="dashboard.WELCOME"></small>
+               <div class="pull-right">
+                  <div class="btn-group">
+                         <a style="bottom: 27px;"  class="btn btn-primary" href="{{ url_for('patient.add_patient') }}">Add patient</a>
+
+                  </div>
+               </div>
+            </div>
+<table id="patient" class="table table-striped" style="width:100%">
+        <thead>
+            <tr>
+                <th>patient_id</th>
+                <th>pat_first_name</th>
+                <th>pat_last_name</th>
+                <th>pat_address</th>
+                <th>pat_insurance_no</th>
+                <th>pat_ph_no</th>
+                <th>Action</th>
+            </tr>
+        <thead>
+</table>
+
+<script>
+             $(document).ready( function () {
+                 if ($('#patient').length > 0){
+                     $('#patient').DataTable({
+                        "serverSide": true,
+                        "ajax": {  url: "patient/api",
+                        "data": function (d) {   delete d.columns; },
+                                },
+                     });
+                 }
+             } );
+ </script>
+
+</div>
+ {% endblock %}
+
+

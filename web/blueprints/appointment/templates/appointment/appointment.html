@@ -6,7 +6,7 @@
    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
    <meta name="description" content="Bootstrap Admin App + jQuery">
    <meta name="keywords" content="app, responsive, jquery, bootstrap, dashboard, admin">
-   <title>Nurse</title>
+   <title>appointment</title>
    <!-- =============== VENDOR STYLES ===============-->
    <!-- FONT AWESOME-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
@@ -35,25 +35,21 @@
 {{super()}}
 <div class="content-wrapper">
             <div class="content-heading">
-                <h1>Patient</h1>
+                <h1>appointment</h1>
                <small data-localize="dashboard.WELCOME"></small>
                <div class="pull-right">
                   <div class="btn-group">
-                         <a style="bottom: 27px;"  class="btn btn-primary" href="{{ url_for('patient.add_patient') }}">Add Patient</a>
+                         <a style="bottom: 27px;"  class="btn btn-primary" href="{{ url_for('appointment.add_appointment') }}">Add appointment</a>
 
                   </div>
                </div>
             </div>
-
-<table id="example" class="table table-striped" style="width:100%">
+<table id="appointment" class="table table-striped" style="width:100%">
         <thead>
             <tr>
-                <th>Patient ID</th>
-                <th>First Name</th>
-                <th>Last Name</th>
-                <th>Address</th>
-                <th>Insurance No</th>
-                <th>Phone No</th>
+                <th>patient_name</th>
+                <th>Appointment_name</th>
+                <th>Appointment_Date</th>
                 <th>Action</th>
             </tr>
         <thead>
@@ -61,10 +57,10 @@
 
 <script>
              $(document).ready( function () {
-                 if ($('#example').length > 0){
-                     $('#example').DataTable({
+                 if ($('#appointment').length > 0){
+                     $('#appointment').DataTable({
                         "serverSide": true,
-                        "ajax": {  url: "patient/api",
+                        "ajax": {  url: "appointment/api",
                         "data": function (d) {   delete d.columns; },
                                 },
                      });
