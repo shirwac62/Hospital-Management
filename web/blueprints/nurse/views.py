@@ -17,7 +17,9 @@ def add_nurse():
         save_to_db(data)
         flash('Your nurse has been created', 'success')
         return redirect(url_for('nurse.nurse'))
-    return render_template('nurse/add_nurse.html', title='nurse', form=form)
+    return render_template('nurse/add_medication.html', title='nurse', form=form)
+
+
 
 
 @blueprint.route(blueprint.url + "/edit/<nurse_id>", methods=['GET', 'POST'])

@@ -1,6 +1,8 @@
+
 {% extends "base.html" %}
 {% block head %}
 {{super()}}
+
 <head>
    <meta charset="utf-8">
    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -37,24 +39,22 @@
 {{super()}}
 <div class="content-wrapper">
             <div class="content-heading">
-                <h1>patient</h1>
+                <h1>Medication</h1>
                <small data-localize="dashboard.WELCOME"></small>
                <div class="pull-right">
                   <div class="btn-group">
-                         <a style="bottom: 27px;"  class="btn btn-primary" href="{{ url_for('patient.add_patient') }}">Add patient</a>
-
+                     <a style="bottom: 27px;"  class="btn btn-primary" href="{{ url_for('medication.add_medication') }}">Add Medication</a>
                   </div>
                </div>
             </div>
-<table id="patient" class="table table-striped" style="width:100%">
+<table id="medication" class="table table-striped" style="width:100%">
         <thead>
             <tr>
-                <th>patient_id</th>
-                <th>pat_first_name</th>
-                <th>pat_last_name</th>
-                <th>pat_address</th>
-                <th>pat_insurance_no</th>
-                <th>pat_ph_no</th>
+                <th>ID</th>
+                <th>Code</th>
+                <th>Name</th>
+                <th>Brand</th>
+                <th>Description</th>
                 <th>Action</th>
             </tr>
         <thead>
@@ -62,10 +62,10 @@
 
 <script>
              $(document).ready( function () {
-                 if ($('#patient').length > 0){
-                     $('#patient').DataTable({
+                 if ($('#medication').length > 0){
+                     $('#medication').DataTable({
                         "serverSide": true,
-                        "ajax": {  url: "patient/api",
+                        "ajax": {  url: "medication/api",
                         "data": function (d) {   delete d.columns; },
                                 },
                      });
@@ -74,6 +74,4 @@
  </script>
 
 </div>
- {% endblock %}
-
-
+{% endblock %}
