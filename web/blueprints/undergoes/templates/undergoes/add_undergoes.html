@@ -1,0 +1,84 @@
+{% extends "base.html" %}
+
+{% block content %}
+<br><br>
+<div class="col-md-6 offset-md-3">
+        <div class="huge">Add Undergoes</div>
+    </div>
+    <div class="col-md-6 offset-md-3 border pt-2" >
+        <div class="row">
+            <div class="col-md-12">
+                <form method="POST" action="">
+                {{ form.hidden_tag() }} <!--CSRF TOKEN -->
+                     <fieldset class="form-group" >
+                        <div class="form-group">
+                            {{ form.doctor_first_name.label(class="form-control-label") }}
+                            {{ form.doctor_first_name(class="form-control form-control-lg") }}
+                        </div>
+                    </fieldset>
+                    <fieldset class="form-group">
+                        <div class="form-group">
+                            {{ form.doctor_last_name.label(class="form-control-label") }}
+                            {{ form.doctor_last_name(class="form-control form-control-lg") }}
+                        </div>
+                    </fieldset>
+                     <fieldset class="form-group" >
+                        <div class="form-group">
+                            {{ form.pat_first_name.label(class="form-control-label") }}
+                            {{ form.pat_first_name(class="form-control form-control-lg") }}
+                        </div>
+                    </fieldset>
+                    <fieldset class="form-group">
+                        <div class="form-group">
+                            {{ form.pat_last_name.label(class="form-control-label") }}
+                            {{ form.pat_last_name(class="form-control form-control-lg") }}
+                        </div>
+                    </fieldset>
+                    <fieldset class="form-group" >
+                        <div class="form-group">
+                            {{ form.procedure_code.label(class="form-control-label") }}
+                            {{ form.procedure_code(class="form-control form-control-lg") }}
+                        </div>
+                    </fieldset>
+                    <fieldset class="form-group" >
+                        <div class="form-group">
+                            {{ form.date.label(class="form-control-label") }}
+                            {{ form.date(class="form-control form-control-lg") }}
+                        </div>
+                    </fieldset>
+                   <fieldset class="form-group" >
+                        <div class="form-group">
+                            {{ form.nurse_first_name.label(class="form-control-label") }}
+                            {{ form.nurse_first_name(class="form-control form-control-lg") }}
+                        </div>
+                    </fieldset>
+                    <fieldset class="form-group">
+                        <div class="form-group">
+                            {{ form.nurse_last_name.label(class="form-control-label") }}
+                            {{ form.nurse_last_name(class="form-control form-control-lg") }}
+                        </div>
+                    </fieldset>
+                    <fieldset class="form-group" >
+                        <div class="form-group">
+                            {{ form.room_no.label(class="form-control-label") }}
+                            {{ form.room_no(class="form-control form-control-lg") }}
+                        </div>
+                    </fieldset>
+            </div>
+        </div>
+
+        <br>
+        <div class="row">
+            <div class="col-md-12">
+                    <fieldset>
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-primary">Add undergoes</button>
+                        </div>
+                    </fieldset>
+                </form>
+            </div>
+        </div>
+    </div>
+  {% endblock %}
+
+

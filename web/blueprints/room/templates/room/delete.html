@@ -3,7 +3,7 @@
 {% block content %}
 <br><br>
 <div class="col-md-6 offset-md-3">
-        <div class="huge">Delete Procedure</div>
+        <div class="huge">Delete Room</div>
     </div>
     <div class="col-md-6 offset-md-3 border pt-2" >
         <div class="row">
@@ -12,23 +12,22 @@
                 {{ form.hidden_tag() }} <!--CSRF TOKEN -->
                   <fieldset class="form-group" >
                         <div class="form-group">
-                            {{ form.procedure_code.label(class="form-control-label") }}
-                            {{ form.procedure_code(class="form-control form-control-lg") }}
+                            {{ form.room_no.label(class="form-control-label") }}
+                            {{ form.room_no(class="form-control form-control-lg") }}
                         </div>
                     </fieldset>
                     <fieldset class="form-group">
                         <div class="form-group">
-                            {{ form.procedure_name.label(class="form-control-label") }}
-                            {{ form.procedure_name(class="form-control form-control-lg") }}
+                            {{ form.room_type.label(class="form-control-label") }}
+                            {{ form.room_type(class="form-control form-control-lg") }}
                         </div>
                     </fieldset>
                     <fieldset class="form-group">
                         <div class="form-group">
-                            {{ form.cost.label(class="form-control-label") }}
-                            {{ form.cost(class="form-control form-control-lg") }}
+                            {{ form.available.label(class="form-control-label") }}
+                            {{ form.available(class="form-control form-control-lg") }}
                         </div>
                     </fieldset>
-            </div>
             </div>
         </div>
 
@@ -37,7 +36,7 @@
             <div class="col-md-12">
                     <fieldset>
                         <div class="form-group">
-                            <button type="submit" class="btn btn-danger">Delete Procedure</button>
+                            <button type="submit" class="btn btn-danger">Delete Room</button>
                         </div>
                     </fieldset>
                 </form>

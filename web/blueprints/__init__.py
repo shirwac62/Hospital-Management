@@ -6,6 +6,7 @@ from web.blueprints.appointment.views import blueprint as appointment
 from web.blueprints.department.views import blueprint as department
 from web.blueprints.medication.views import blueprint as medication
 from web.blueprints.procedure.views import blueprint as procedure
+from web.blueprints.room.views import blueprint as room
+from web.blueprints.undergoes.views import blueprint as undergoes
 
-
-tenant_list = [dashbord, patient, nurse, doctor, appointment, department,medication,procedure]
+tenant_list = [dashbord, patient, nurse, doctor, appointment, department, medication, procedure, room, undergoes]

@@ -12,7 +12,6 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
 
-
    <link rel="stylesheet" href="static/vendor/fontawesome/css/font-awesome.min.css">
    <!-- SIMPLE LINE ICONS-->
    <link rel="stylesheet" href="static/vendor/simple-line-icons/css/simple-line-icons.css">
@@ -38,22 +37,23 @@
 {{super()}}
 <div class="content-wrapper">
             <div class="content-heading">
-                <h1>procedure</h1>
+                <h1>Room</h1>
                <small data-localize="dashboard.WELCOME"></small>
                <div class="pull-right">
                   <div class="btn-group">
-                         <a style="bottom: 27px;"  class="btn btn-primary" href="{{ url_for('procedure.add_procedure') }}">Add Procedure</a>
+                      <a style="bottom: 27px;"  class="btn btn-primary" href="{{ url_for('room.add_room') }}">Add Room</a>
+
 
                   </div>
                </div>
             </div>
-<table id="procedure" class="table table-striped" style="width:100%">
+<table id="room" class="table table-striped" style="width:100%">
         <thead>
             <tr>
-              <th>Procedure ID</th>
-                <th>Procedure Code</th>
-                <th>Procedure Name</th>
-                <th>Cost</th>
+                <th>Room ID</th>
+                <th>Room No</th>
+                <th>Room Type</th>
+                <th>Available</th>
                 <th>Action</th>
             </tr>
         <thead>
@@ -61,10 +61,10 @@
 
 <script>
              $(document).ready( function () {
-                 if ($('#procedure').length > 0){
-                     $('#procedure').DataTable({
+                 if ($('#room').length > 0){
+                     $('#room').DataTable({
                         "serverSide": true,
-                        "ajax": {  url: "procedure/api",
+                        "ajax": {  url: "room/api",
                         "data": function (d) {   delete d.columns; },
                                 },
                      });
@@ -72,5 +72,6 @@
              } );
  </script>
 
+
 </div>
-{% endblock %}
+ {% endblock %}

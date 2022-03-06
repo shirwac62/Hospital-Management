@@ -45,14 +45,15 @@ def pub_index():
     if length and int(length) == -1:
         length = db.session.query(Doctor.doctor_id).count()
     page = (int(start) + int(length)) / int(length)
-    data_list = Doctor.query.filter(Doctor.doctor_first_name.ilike('%' + search + '%')).paginate(page, length, True)
+    data_list = Doctor.query.filter(Doctor.doc_first_name.ilike('%' + search + '%')).paginate(page, length, True)
     data = []
     for b in data_list.items:
         row = [b.doctor_id, b.doctor_first_name, b.doctor_last_name, b.doctor_address, b.doctor_ph_no,
                '<a href="{0}"><i class="fa-solid fa-pen-to-square"></i></a>'.format(
                    url_for('doctor.edit_doctor', doctor_id=b.doctor_id)) + " " + \
                '<a href="{0}"><i class="fa-solid fa-trash"></i></a>'.format(
-                   url_for('doctor.delete_doctor', doctor_id=b.doctor_id))]
+                   url_for('doctor.delete_doctor', doctor_id=b.doctor_id))
+               ]
 
         data += [row]
     print("data_list.total: ", data_list.total)
