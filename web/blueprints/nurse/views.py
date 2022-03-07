@@ -17,7 +17,7 @@ def add_nurse():
         save_to_db(data)
         flash('Your nurse has been created', 'success')
         return redirect(url_for('nurse.nurse'))
-    return render_template('nurse/add_medication.html', title='nurse', form=form)
+    return render_template('nurse/add_nurse.html', title='nurse', form=form)
 
 
 
@@ -27,8 +27,7 @@ def edit_nurse(nurse_id):
     data = Nurse.query.get(nurse_id)
     form = NurseForm(obj=data)
     if form.validate_on_submit():
-        data.nurse_first_name = form.nurse_first_name.data
-        data.nurse_last_name = form.nurse_last_name.data
+        data.name = form.name.data
         data.nurse_address = form.nurse_address.data
         data.nurse_ph_no = form.nurse_ph_no.data
         save_to_db(data)
@@ -58,10 +57,10 @@ def pub_index():
     if length and int(length) == -1:
         length = db.session.query(Nurse.nurse_id).count()
     page = (int(start) + int(length)) / int(length)
-    data_list = Nurse.query.filter(Nurse.nurse_first_name.ilike('%' + search + '%')).paginate(page, length, True)
+    data_list = Nurse.query.filter(Nurse.name.ilike('%' + search + '%')).paginate(page, length, True)
     data = []
     for n in data_list.items:
-        row = [n.nurse_id, n.nurse_first_name, n.nurse_last_name, n.nurse_address, n.nurse_ph_no,
+        row = [n.nurse_id, n.name, n.nurse_address, n.nurse_ph_no,
                '<a href="{0}"><i class="fa-solid fa-pen-to-square"></i></a>'.format(
                    url_for('nurse.edit_nurse', nurse_id=n.nurse_id)) + " " + \
                '<a href="{0}"><i class="fa-solid fa-trash"></i></a>'.format(

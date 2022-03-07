@@ -4,8 +4,7 @@ from wtforms.validators import DataRequired, Length
 
 
 class DoctorForm(FlaskForm):
-    doctor_first_name = StringField('First Name', validators=[DataRequired(), Length(min=2, max=20)])
-    doctor_last_name = StringField('Last Name', validators=[DataRequired()])
-    doctor_address = StringField('Address', validators=[DataRequired()])
-    doctor_ph_no = IntegerField('Phone No', validators=[DataRequired()])
-    submit = SubmitField('Add doctor')
+    doc_full_name = StringField('doc_full_name', validators=[DataRequired(), Length(min=2, max=20)])
+    doc_address = StringField('doc_address', validators=[DataRequired()])
+    doc_ph_no = IntegerField('doc_ph_no', validators=[DataRequired()])
+    submit = SubmitField('Add Doctor')

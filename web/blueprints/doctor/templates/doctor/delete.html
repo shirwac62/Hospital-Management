@@ -12,26 +12,20 @@
                 {{ form.hidden_tag() }} <!--CSRF TOKEN -->
                    <fieldset class="form-group" >
                         <div class="form-group">
-                            {{ form.doctor_first_name.label(class="form-control-label") }}
-                            {{ form.doctor_first_name(class="form-control form-control-lg") }}
+                            {{ form.doc_full_name.label(class="form-control-label") }}
+                            {{ form.doc_full_name(class="form-control form-control-lg") }}
                         </div>
                     </fieldset>
                     <fieldset class="form-group">
                         <div class="form-group">
-                            {{ form.doctor_last_name.label(class="form-control-label") }}
-                            {{ form.doctor_last_name(class="form-control form-control-lg") }}
+                            {{ form.doc_address.label(class="form-control-label") }}
+                            {{ form.doc_address(class="form-control form-control-lg") }}
                         </div>
                     </fieldset>
                     <fieldset class="form-group">
                         <div class="form-group">
-                            {{ form.doctor_address.label(class="form-control-label") }}
-                            {{ form.doctor_address(class="form-control form-control-lg") }}
-                        </div>
-                    </fieldset>
-                    <fieldset class="form-group">
-                        <div class="form-group">
-                            {{ form.doctor_ph_no.label(class="form-control-label") }}
-                            {{ form.doctor_ph_no(class="form-control form-control-lg") }}
+                            {{ form.doc_ph_no.label(class="form-control-label") }}
+                            {{ form.doc_ph_no(class="form-control form-control-lg") }}
                         </div>
                     </fieldset>
             </div>

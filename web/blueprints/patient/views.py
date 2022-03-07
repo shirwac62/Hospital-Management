@@ -26,8 +26,7 @@ def edit_patient(patient_id):
     data = Patient.query.get(patient_id)
     form = PatientForm(obj=data)
     if form.validate_on_submit():
-        data.pat_first_name = form.pat_first_name.data
-        data.pat_last_name = form.pat_last_name.data
+        data.pat_full_name = form.pat_full_name.data
         data.pat_address = form.pat_address.data
         data.pat_insurance_no = form.pat_insurance_no.data
         data.pat_ph_no = form.pat_ph_no.data
@@ -50,7 +49,6 @@ def delete_patient(patient_id):
 
 @blueprint.route(blueprint.url + '/api')
 def pub_index():
-    print("pub_index  pub_index")
     start = int(request.args.get('start', 0))
     search = request.args.get('search[value]', '')
     print("search: ", search)
@@ -58,10 +56,10 @@ def pub_index():
     if length and int(length) == -1:
         length = db.session.query(Patient.patient_id).count()
     page = (int(start) + int(length)) / int(length)
-    data_list = Patient.query.filter(Patient.pat_first_name.ilike('%' + search + '%')).paginate(page, length, True)
+    data_list = Patient.query.filter(Patient.pat_full_name.ilike('%' + search + '%')).paginate(page, length, True)
     data = []
     for b in data_list.items:
-        row = [b.patient_id, b.pat_first_name, b.pat_last_name, b.pat_address, b.pat_insurance_no, b.pat_ph_no,
+        row = [b.patient_id, b.pat_full_name, b.pat_address,  b.pat_insurance_no,b.pat_ph_no,
                '<a href="{0}"><i class="fa-solid fa-pen-to-square"></i></a>'.format(
                    url_for('patient.edit_patient', patient_id=b.patient_id)) + " " + \
                '<a href="{0}"><i class="fa-solid fa-trash"></i></a>'.format(
