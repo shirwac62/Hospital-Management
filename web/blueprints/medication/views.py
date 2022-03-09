@@ -59,9 +59,9 @@ def pub_index():
     data = []
     for n in data_list.items:
         row = [n.medication_id, n.code, n.name, n.brand, n.description,
-               '<a href="{0}"><i class="fa-solid fa-pen-to-square"></i></a>'.format(
+               '<a href="{0}"><i class="fa-solid fa-pen-to-square"style="color:green"></i></a>'.format(
                    url_for('medication.edit_medication', medication_id=n.medication_id)) + " " + \
-               '<a href="{0}"><i class="fa-solid fa-trash"></i></a>'.format(
+               '<a href="{0}"><i class="fa-solid fa-trash"style="color:red"></i></a>'.format(
                    url_for('medication.delete_medication', medication_id=n.medication_id))]
 
         data += [row]

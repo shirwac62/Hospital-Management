@@ -60,9 +60,9 @@ def pub_index():
     data = []
     for b in data_list.items:
         row = [b.patient_id, b.pat_full_name, b.pat_address,  b.pat_insurance_no,b.pat_ph_no,
-               '<a href="{0}"><i class="fa-solid fa-pen-to-square"></i></a>'.format(
+               '<a href="{0}"><i class="fa-solid fa-pen-to-square"style="color:green"></i></a>'.format(
                    url_for('patient.edit_patient', patient_id=b.patient_id)) + " " + \
-               '<a href="{0}"><i class="fa-solid fa-trash"></i></a>'.format(
+               '<a href="{0}"><i class="fa-solid fa-trash"style="color:red"></i></a>'.format(
                    url_for('patient.delete_patient', patient_id=b.patient_id))]
 
         data += [row]

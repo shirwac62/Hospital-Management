@@ -59,8 +59,8 @@ def pub_index():
     data = []
     for n in data_list.items:
         row = [n.procedure_id, n.procedure_code, n.procedure_name, n.cost,
-               '<a href="{0}"><i class="fa-solid fa-pen-to-square"></i></a>'.format(url_for('procedure.edit_procedure', procedure_id=n.procedure_id)) + " " + \
-               '<a href="{0}"><i class="fa-solid fa-trash"></i></a>'.format(url_for('procedure.delete_procedure', procedure_id=n.procedure_id))]
+               '<a href="{0}"><i class="fa-solid fa-pen-to-square"style="color:green"></i></a>'.format(url_for('procedure.edit_procedure', procedure_id=n.procedure_id)) + " " + \
+               '<a href="{0}"><i class="fa-solid fa-trash"style="color:red"></i></a>'.format(url_for('procedure.delete_procedure', procedure_id=n.procedure_id))]
 
         data += [row]
     print("data_list.total: ", data_list.total)

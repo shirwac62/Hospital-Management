@@ -4,7 +4,7 @@ from wtforms.validators import DataRequired, Length
 
 
 class AppointmentForm(FlaskForm):
-    patient_name =  StringField('patient Name', validators=[DataRequired()])
-    Appointment_name = StringField('Appointment Name', validators=[DataRequired()])
+    Doctor_name = StringField('Doctor_name ', validators=[DataRequired()])
+    patient_name = StringField('patient Name', validators=[DataRequired()])
     Appointment_Date = StringField('Appointment Date', validators=[DataRequired()])
     submit = SubmitField('Add appointment')

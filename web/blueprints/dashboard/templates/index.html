@@ -1,6 +1,12 @@
 {% extends "base.html" %}
 
 {% block content %}
+<style>
+body {
+  background-image: url('static/images/hospital.png');
+
+}
+</style>
 
 <body class="layout-h">
 <!--{{supper}}-->
@@ -29,10 +35,14 @@
 
       <!-- Main section-->
       <section>
-         <!-- Page content-->
+<!--          Page content-->
          <div class="content-wrapper">
             <div class="content-heading">
-               <h1>  <i class="fa fa-h-square" style="font-size:32px;"></i> Dashboard</h1>
+               <h1>  <i class="fa fa-h-square" style="font-size:55px;"></i> Dashboard</h1>
+<!--               <img src="hospital.png" >-->
+<!--                 <img src= "ayrton_senna_movie_wallpaper_by_bashgfx-d4cm6x6.jpg ">-->
+<!--         `  <img src="{{url_for('static', filename='dark.png')}}" />-->
+
                <small data-localize="dashboard.WELCOME"></small>
             </div>
 
@@ -167,7 +177,7 @@
                      </a>
                   </div>
                   <div class="col-lg-4 col-md-6">
-                     <a href="prescribes.html">
+                     <a href="prescribes">
                         <!-- START widget-->
                         <div class="panel widget bg-danger-light">
                            <div class="row row-table">
@@ -202,7 +212,7 @@
             </div>
          </div>
       </section>
-      <!-- Page footer-->
+<!--       Page footer-->
       <footer style=  "color: #fff;">
          <span>&copy; 2020 - Hospital Management System</span>
        </footer>
@@ -211,23 +221,23 @@
    </div>
 
 </body>
-  <!-- =============== VENDOR SCRIPTS ===============-->
-   <!-- MODERNIZR-->
+<!--   =============== VENDOR SCRIPTS ===============-->
+<!--    MODERNIZR-->
    <script src="vendor/modernizr/modernizr.custom.js"></script>
-   <!-- JQUERY-->
+<!--    JQUERY-->
    <script src="vendor/jquery/dist/jquery.js"></script>
-   <!-- BOOTSTRAP-->
+<!--    BOOTSTRAP-->
    <script src="vendor/bootstrap/dist/js/bootstrap.js"></script>
-   <!-- STORAGE API-->
+<!--    STORAGE API-->
    <script src="vendor/jQuery-Storage-API/jquery.storageapi.js"></script>
-   <!-- JQUERY EASING-->
+<!--    JQUERY EASING-->
    <script src="vendor/jquery.easing/js/jquery.easing.js"></script>
-   <!-- ANIMO-->
+<!--    ANIMO-->
    <script src="vendor/animo.js/animo.js"></script>
-   <!-- LOCALIZE-->
+<!--    LOCALIZE-->
    <script src="vendor/jquery-localize-i18n/dist/jquery.localize.js"></script>
-   <!-- =============== PAGE VENDOR SCRIPTS ===============-->
-   <!-- =============== APP SCRIPTS ===============-->
+<!--    =============== PAGE VENDOR SCRIPTS ===============-->
+<!--    =============== APP SCRIPTS ===============-->
    <script src="app/js/app.js"></script>
    <script src="js/home.js"></script>
 

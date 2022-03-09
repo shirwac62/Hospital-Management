@@ -59,9 +59,9 @@ def pub_index():
     data = []
     for b in data_list.items:
         row = [b.room_id, b.room_no, b.room_type, b.available,
-               '<a href="{0}"><i class="fa-solid fa-pen-to-square"></i></a>'.format(
+               '<a href="{0}"><i class="fa-solid fa-pen-to-square"style="color:green"></i></a>'.format(
                    url_for('room.edit_room', room_id=b.room_id)) + " " + \
-               '<a href="{0}"><i class="fa-solid fa-trash"></i></a>'.format(
+               '<a href="{0}"><i class="fa-solid fa-trash"style="color:red"></i></a>'.format(
                    url_for('room.delete_room', room_id=b.room_id))
                ]
 
