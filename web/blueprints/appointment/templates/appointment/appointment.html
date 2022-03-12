@@ -1,44 +1,18 @@
+
 {% extends "base.html" %}
 {% block head %}
 {{super()}}
-<head>
-    <meta charset="utf-8">
-   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-   <meta name="description" content="Bootstrap Admin App + jQuery">
-   <meta name="keywords" content="app, responsive, jquery, bootstrap, dashboard, admin">
-   <title>appointment</title>
-   <!-- =============== VENDOR STYLES ===============-->
-   <!-- FONT AWESOME-->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-   <link rel="stylesheet" href="static/vendor/fontawesome/css/font-awesome.min.css">
-   <!-- SIMPLE LINE ICONS-->
-   <link rel="stylesheet" href="static/vendor/simple-line-icons/css/simple-line-icons.css">
-   <!-- ANIMATE.CSS-->
-   <link rel="stylesheet" href="static/vendor/animate.css/animate.min.css">
-   <!-- WHIRL (spinners)-->
-   <link rel="stylesheet" href="static/vendor/whirl/dist/whirl.css">
-   <link rel="stylesheet" href="static/vendor/sweetalert/dist/sweetalert.css">
-   <!-- DATATABLES-->
-   <link rel="stylesheet" href="static/vendor/datatables-colvis/css/dataTables.colVis.css">
-   <link rel="stylesheet" href="static/vendor/datatables/media/css/dataTables.bootstrap.css">
-   <link rel="stylesheet" href="static/vendor/dataTables.fontAwesome/index.css">
-   <!-- =============== PAGE VENDOR STYLES ===============-->
-   <!-- =============== BOOTSTRAP STYLES ===============-->
-<!--   <link rel="stylesheet" href="static/app/css/bootstrap.css" id="bscss">-->
-   <!-- =============== APP STYLES ===============-->
-<!--   <link rel="stylesheet" href="static/app/css/app.css" id="maincss">-->
-   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-</head>
+
 {% endblock %}
 {% block content %}
 {{super()}}
 <div class="content-wrapper">
             <div class="content-heading">
-                <h1>appointment</h1>
+                <h1>Appointment</h1>
                <small data-localize="dashboard.WELCOME"></small>
                <div class="pull-right">
                   <div class="btn-group">
+
                          <a style="bottom: 27px;"  class="btn btn-primary" href="{{ url_for('appointment.add_appointment') }}">Add appointment</a>
 
                   </div>
@@ -47,10 +21,11 @@
 <table id="appointment" class="table table-striped" style="width:100%">
         <thead>
             <tr>
-
-                <th>patient_name</th>
-                <th>Appointment_name</th>
-                <th>Appointment_Date</th>
+                <th>ID</th>
+                <th>Appointment Name</th>
+                <th>Doctor Name</th>
+                <th>Patient Name</th>
+                <th>Appointment Date</th>
                 <th>Action</th>
             </tr>
         <thead>
@@ -70,10 +45,4 @@
  </script>
 
 </div>
- {% endblock %}
-
-
-
-
-
-
+{% endblock %}

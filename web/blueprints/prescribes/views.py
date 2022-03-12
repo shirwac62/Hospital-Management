@@ -17,6 +17,10 @@ def add_prescribes():
         save_to_db(data)
         flash('Your prescribes has been created', 'success')
         return redirect(url_for('prescribes.prescribes'))
+    for fieldName, errorMessages in form.errors.items():
+        for err in errorMessages:
+            print(fieldName, err)
+
     return render_template('prescribes/add.html', title='prescribes', form=form)
 
 

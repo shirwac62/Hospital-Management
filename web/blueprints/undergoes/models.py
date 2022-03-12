@@ -6,7 +6,7 @@ class Undergoes(db.Model):
     doc_full_name = db.Column(db.String(20),nullable=False)
     pat_full_name = db.Column(db.String(20), nullable=False)
     procedure_code = db.Column(db.Integer, nullable=False)
-    date = db.Column(db.Integer, nullable=False)
+    date = db.Column(db.Date, nullable=False)
     name = db.Column(db.String(20), nullable=False)
     room_no = db.Column(db.Integer,  nullable=False)
 
