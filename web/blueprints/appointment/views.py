@@ -61,21 +61,19 @@ def pub_index():
     if length and int(length) == -1:
         length = db.session.query(Appointment.appointment_id).count()
     page = (int(start) + int(length)) / int(length)
-    data_list = Appointment.query.filter(Appointment.appointment_name.ilike('%' + search + '%')).paginate(page, length,
-                                                                                                          True)
+    data_list = Appointment.query.filter(Appointment.appointment_name.ilike('%' + search + '%')).paginate(page, length, True)
     data = []
-    for b in data_list.items:
-        row = [b.appointment_id, b.appointment_name, b.doctor_name, b.patient_name, b.date,
-               '<a href="{0}"><i class="fa-solid fa-pen-to-square"style="color:green"></i></a>'.format(
-                   url_for('appointment.edit_appointment', appointment_id=b.appointment_id)) + " " + \
-               '<a href="{0}"><i class="fa-solid fa-trash"style="color:red"></i></a>'.format(
-                   url_for('appointment.delete_appointment', appointment_id=b.appointment_id))]
+    for n in data_list.items:
+        row = [n.appointment_id, n.appointment_name, n.doctor_name, n.patient_name,n.date,
+               '<a href="{0}"><i class="fa fa-edit"style="color:green"></i></a>'.format(
+                   url_for('appointment.edit_appointment', appointment_id=n.appointment_id)) + " " + \
+               '<a href="{0}"><i class="fa fa-trash"style="color:red"></i></a>'.format(
+                   url_for('appointment.delete_appointment', appointment_id=n.appointment_id))]
 
         data += [row]
     print("data_list.total: ", data_list.total)
     return jsonify({'data': data, "recordsTotal": data_list.total,
                     "recordsFiltered": data_list.total})
-
 
 @blueprint.route(blueprint.url, methods=['GET'])
 def appointment():

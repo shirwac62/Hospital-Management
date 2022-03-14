@@ -10,12 +10,6 @@
             <div class="col-md-12">
                 <form method="POST" action="">
                 {{ form.hidden_tag() }} <!--CSRF TOKEN -->
-                   <fieldset class="form-group" >
-                        <div class="form-group">
-                            {{ form.department_id.label(class="form-control-label") }}
-                            {{ form.department_id(class="form-control form-control-lg") }}
-                        </div>
-                    </fieldset>
                     <fieldset class="form-group">
                         <div class="form-group">
                             {{ form.department_name.label(class="form-control-label") }}
@@ -31,16 +25,11 @@
 
                     <fieldset class="form-group">
                         <div class="form-group">
-                            {{ form.First_name.label(class="form-control-label") }}
-                            {{ form.First_name(class="form-control form-control-lg") }}
+                            {{ form.head_name.label(class="form-control-label") }}
+                            {{ form.head_name(class="form-control form-control-lg") }}
                         </div>
                     </fieldset>
-                    <fieldset class="form-group">
-                        <div class="form-group">
-                            {{ form.Last_name.label(class="form-control-label") }}
-                            {{ form.Last_name(class="form-control form-control-lg") }}
-                        </div>
-                    </fieldset>
+
             </div>
         </div>
 

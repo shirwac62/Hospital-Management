@@ -1,7 +1,6 @@
 from flask import Flask, render_template, redirect, url_for
 from flask_bcrypt import Bcrypt
 from flask_bootstrap import Bootstrap
-
 from web.blueprints import tenant_list
 from web.extensions import db, login_manager
 

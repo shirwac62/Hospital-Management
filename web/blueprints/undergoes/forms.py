@@ -28,7 +28,7 @@ class UndergoesForm(FlaskForm):
         # self.doc_full_name.choices = [(0, "Select Doctor")] + [(a.doc_full_name, str(a)) for a in get_all(Doctor)]
         self.doc_full_name.choices = [(0, "Select Doctor")] + [(a.doc_full_name,a.doc_full_name) for a in get_all(Doctor) ]
         self.pat_full_name.choices = [(0, "Select Patient")] + [(a.pat_full_name,a.pat_full_name) for a in get_all(Patient) ]
-        self.procedure_code.choices = [(0, "Select Procedure")] + [(a.procedure_id,a.procedure_code) for a in get_all(Procedure) ]
-        self.name.choices = [(0, "Select Procedure")] + [(a.nurse_id,a.name) for a in get_all(Nurse) ]
-        self.room_no.choices = [(0, "Select Procedure")] + [(a.room_id,a.room_no) for a in get_all(Room) ]
+        self.procedure_code.choices = [(0, "Select Procedure")] + [(a.procedure_code,a.procedure_code) for a in get_all(Procedure) ]
+        self.name.choices = [(0, "Select nurse")] + [(a.name,a.name) for a in get_all(Nurse) ]
+        self.room_no.choices = [(0, "Select room")] + [(a.room_no,a.room_no) for a in get_all(Room) ]
 

@@ -3,10 +3,10 @@ from datetime import timedelta
 DEBUG = True  # False#
 LOG_LEVEL = 'DEBUG'  # / CRITICAL / ERROR / WARNING / INFO / DEBUG
 # SERVER_NAME = '127.0.0.1:9000'
-SECRET_KEY = 'abdinafac'
+SECRET_KEY = 'abdiwali'
 
 # SQLAlchemy.
-db_uri = 'postgresql://postgres:feelfree252@192.168.1.200/Hms'
+db_uri = 'postgresql://postgres:123@192.168.1.12/hms901'
 SQLALCHEMY_TRACK_MODIFICATIONS = False
 SQLALCHEMY_DATABASE_URI = db_uri
 

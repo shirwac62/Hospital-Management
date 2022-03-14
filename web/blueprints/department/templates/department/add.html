@@ -1,6 +1,24 @@
  {% extends "base.html" %}
 
 {% block content %}
+ <div class="wrapper">
+    <header style="background-color: #2A2728;"class="top navbar-wrapper">
+<!--          START Top Navbar-->
+         <nav class="navbar navbar-inverse">
+            <div class="container-fluid">
+               <div class="navbar-header">
+                  <a class =":navbar-brand" href="/"><b>Hospital Management System</b></a>
+               </div>
+               <ul class="nav navbar-nav">
+                  <li class =":active"><a href="/"><b>Home</b></a></li>
+               </ul>
+               <ul class style="background-color: brand;nav navbar-nav navbar-left">
+                  <li class style=":active"><a href="about_us.html"><b>Creators</b></a></li>
+               </ul>
+            </div>
+         </nav>
+      </header>
+ <hr>
 <br><br>
 <div class="col-md-6 offset-md-3">
         <div class="huge">Add Department</div>
@@ -10,12 +28,6 @@
             <div class="col-md-12">
                 <form method="POST" action="">
                 {{ form.hidden_tag() }} <!--CSRF TOKEN -->
-                   <fieldset class="form-group" >
-                        <div class="form-group">
-                            {{ form.department_id.label(class="form-control-label") }}
-                            {{ form.department_id(class="form-control form-control-lg") }}
-                        </div>
-                    </fieldset>
                     <fieldset class="form-group">
                         <div class="form-group">
                             {{ form.department_name.label(class="form-control-label") }}
@@ -30,16 +42,11 @@
                     </fieldset>
                     <fieldset class="form-group">
                         <div class="form-group">
-                            {{ form.First_name.label(class="form-control-label") }}
-                            {{ form.First_name(class="form-control form-control-lg") }}
+                            {{ form.head_name.label(class="form-control-label") }}
+                            {{ form.head_name(class="form-control form-control-lg") }}
                         </div>
                     </fieldset>
-                    <fieldset class="form-group">
-                        <div class="form-group">
-                            {{ form.Last_name.label(class="form-control-label") }}
-                            {{ form.Last_name(class="form-control form-control-lg") }}
-                        </div>
-                    </fieldset>
+
 
 <!--            </div>-->
 <!--        </div>-->

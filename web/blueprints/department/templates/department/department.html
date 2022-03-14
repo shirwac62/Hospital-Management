@@ -48,11 +48,10 @@
 <table id="department" class="table table-striped" style="width:100%">
         <thead>
             <tr>
-                <th>Department ID</th>
-                <th>Department Name</th>
+                <th>department ID</th>
+                <th>department Name</th>
                 <th>Head ID</th>
-                <th>First Name</th>
-                <th>Last Name</th>
+                <th>head Name</th>
                 <th>Action</th>
             </tr>
         <thead>
@@ -60,7 +59,7 @@
 
 <script>
              $(document).ready( function () {
-                 if ($('#department').length > 0){
+                 if ($('#department').length < 5){
                      $('#department').DataTable({
                         "serverSide": true,
                         "ajax": {  url: "department/api",
