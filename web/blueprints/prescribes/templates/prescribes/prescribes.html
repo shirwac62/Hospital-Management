@@ -6,7 +6,7 @@
    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
    <meta name="description" content="Bootstrap Admin App + jQuery">
    <meta name="keywords" content="app, responsive, jquery, bootstrap, dashboard, admin">
-   <title>Nurse</title>
+   <title>prescribes</title>
    <!-- =============== VENDOR STYLES ===============-->
    <!-- FONT AWESOME-->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
@@ -49,10 +49,10 @@
 <table id="prescribes" class="table table-striped" style="width:100%">
         <thead>
             <tr>
-                <th>prescribes Id</th>
+                <th>Prescribes Id</th>
                 <th> Doc Full name</th>
                 <th> Pat Full Name</th>
-                <th> Code</th>
+                <th> med Code</th>
                 <th>Date</th>
                 <th>Appointment ID</th>
                 <th>Dose</th>
@@ -61,7 +61,8 @@
         <thead>
 </table>
 
-            <script type="text/javascript" src="{{url_for('static', filename='DataTables/datatables.min.js')}}"></script>
+
+
 <script>
              $(document).ready( function () {
                  if ($('#prescribes').length > 0){

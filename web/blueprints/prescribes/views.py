@@ -12,6 +12,7 @@ from web.extensions import save_to_db, delete, db
 blueprint = ProjectBlueprint('prescribes', __name__)
 
 
+
 @blueprint.route(blueprint.url + '/api')
 def pub_index():
     start = int(request.args.get('start', 0))
@@ -24,14 +25,17 @@ def pub_index():
     data_list = Prescribes.query.filter(Prescribes.pat_full_name.ilike('%' + search + '%')).paginate(page, length, True)
     data = []
     for b in data_list.items:
-        row = [b.Prescribes_id, b.doc_full_name, b.pat_full_name, b.med_code, b.date, b.appointment_name, b.dose,
-               '<a href="{0}"><i class="fa-solid fa-pen-to-square"style="color:green"></i></a>'.format(url_for('prescribes.edit_prescribes', Prescribes_id=b.Prescribes_id)) + " " + \
-               '<a href="{0}"><i class="fa-solid fa-trash"style="color:red"></i></a>'.format(url_for('prescribes.delete_prescribes', Prescribes_id=b.Prescribes_id))]
+        row = [b.Prescribes_id, b.doc_full_name, b.pat_full_name,  b.med_code,b.appointment_name,b.date, b.dose,
+               '<a href="{0}"><i class="fa-solid fa-pen-to-square"style="color:green"></i></a>'.format(
+                   url_for('prescribes.edit_prescribes', Prescribes_id=b.Prescribes_id)) + " " + \
+               '<a href="{0}"><i class="fa-solid fa-trash"style="color:red"></i></a>'.format(
+                   url_for('prescribes.delete_prescribes', Prescribes_id=b.Prescribes_id))]
 
         data += [row]
     print("data_list.total: ", data_list.total)
     return jsonify({'data': data, "recordsTotal": data_list.total,
                     "recordsFiltered": data_list.total})
+
 
 
 @blueprint.route(blueprint.url + "/delete/<Prescribes_id>", methods=['GET', 'POST'])
@@ -42,8 +46,7 @@ def delete_prescribes(Prescribes_id):
         delete(data)
         flash('Your prescribes has been Deleted', 'success')
         return redirect(url_for('prescribes.prescribes'))
-    return render_template('prescribes/delete.html', title="delete_prescribes", form=form, prescribes=prescribes,
-                           data=data)
+    return render_template('prescribes/delete.html', title="delete_prescribes", form=form, prescribes=prescribes, data=data)
 
 
 @blueprint.route(blueprint.url + "/edit/<Prescribes_id>", methods=['GET', 'POST'])

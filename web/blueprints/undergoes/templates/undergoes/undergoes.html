@@ -6,7 +6,7 @@
    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
    <meta name="description" content="Bootstrap Admin App + jQuery">
    <meta name="keywords" content="app, responsive, jquery, bootstrap, dashboard, admin">
-   <title>Nurse</title>
+   <title>undergoes</title>
    <!-- =============== VENDOR STYLES ===============-->
    <!-- FONT AWESOME-->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
@@ -48,7 +48,7 @@
                   </div>
                </div>
             </div>
-<table id="room" class="table table-striped" style="width:100%">
+<table id="undergoes" class="table table-striped" style="width:100%">
         <thead>
             <tr>
 
@@ -64,7 +64,18 @@
         <thead>
 </table>
 
-
+<script>
+             $(document).ready( function () {
+                 if ($('#undergoes').length > 0){
+                     $('#undergoes').DataTable({
+                        "serverSide": true,
+                        "ajax": {  url: "undergoes/api",
+                        "data": function (d) {   delete d.columns; },
+                                },
+                     });
+                 }
+             } );
+ </script>
 
 
 </div>
