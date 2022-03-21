@@ -46,7 +46,7 @@
                   </div>
                </div>
             </div>
-<table id="prescribes" class="table table-striped" style="width:100%">
+<table id="Prescribes" class="table table-striped" style="width:100%">
         <thead>
             <tr>
                 <th>Prescribes Id</th>
@@ -62,19 +62,19 @@
 </table>
 
 
-
 <script>
              $(document).ready( function () {
-                 if ($('#prescribes').length > 0){
-                     $('#prescribes').DataTable({
+                 if ($('#Prescribes').length > 0){
+                     $('#Prescribes').DataTable({
                         "serverSide": true,
-                        "ajax": {  url: "prescribes/api",
+                        "ajax": {  url: "Prescribes/api",
                         "data": function (d) {   delete d.columns; },
                                 },
                      });
                  }
              } );
  </script>
+
 
 </div>
  {% endblock %}

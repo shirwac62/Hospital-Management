@@ -35,7 +35,7 @@
                             {{ form.description(class="form-control form-control-lg") }}
                         </div>
                     </fieldset>
-            </div>
+        </div>
         </div>
 
         <br>
@@ -49,6 +49,15 @@
                 </form>
             </div>
         </div>
+         <div class="row">
+            <div class="col-md-12">
+                    <fieldset>
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-warning"><a style="bottom: 27px;"  class="btn btn-primary" href="{{ url_for('medication.medication') }}">Back</a></button>
+                        </div>
+                    </fieldset>
+                </form>
+            </div>
     </div>
   {% endblock %}
 
