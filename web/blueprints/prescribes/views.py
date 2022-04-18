@@ -49,6 +49,7 @@ def delete_prescribes(prescribes_id):
     if form.validate_on_submit():
         delete(data)
         flash('Your prescribes has been Deleted', 'success')
+
         return redirect(url_for('prescribes.prescribes'))
     return render_template('prescribes/delete.html', title="delete_prescribes", form=form, prescribes=prescribes,
                            data=data)
