@@ -6,7 +6,8 @@ LOG_LEVEL = 'DEBUG'  # / CRITICAL / ERROR / WARNING / INFO / DEBUG
 SECRET_KEY = 'abdiwali'
 
 # SQLAlchemy.
-db_uri = 'postgresql://postgres:123@192.168.1.17/hms10'
+# db_uri = 'postgresql://postgres:123@192.168.1.17/hms10'
+db_uri = 'postgresql://postgres:ali12.,ali@127.0.0.1:5432/HMS_flask_shirwac3'
 SQLALCHEMY_TRACK_MODIFICATIONS = False
 SQLALCHEMY_DATABASE_URI = db_uri
 
